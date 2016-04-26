@@ -1,0 +1,11 @@
+.col-md-12
+  .newsletter{ ng: {controller: 'NewsletterCtrl'} }
+    .success{ ng: {hide: 'showForm'} }
+      {{signup_message}}
+    .sign-up{ ng: {show: 'showForm'} }
+      %p SOME TEXT GOES HERE
+      .alert.alert-danger{ role: 'alert', ng: {show: 'showError'} }
+        {{signup_message}}
+      %form
+        %input{ type: 'text', placeholder: 'Enter your email', ng: {model: 'newsletterForm.email'} }
+        %button{ ng: {click: 'newsletterForm.submitForm()'} } Join!
